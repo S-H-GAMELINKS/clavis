@@ -3,6 +3,7 @@
 #include <httplib.h>
 #include <string>
 #include <unordered_map>
+#include <iostream>
 
 using namespace Rice;
 
@@ -14,6 +15,7 @@ class Clavis {
         void clavis_set_port(const std::string& port);
         const std::string clavis_return_port();
         bool clavis_set_route(const std::string& route, const std::string& response);
+        const std::string clavis_get_route_bracket(const std::string& key);
         void clavis_run();
 };
 
@@ -36,6 +38,10 @@ bool Clavis::clavis_set_route(const std::string& route, const std::string& respo
         return false;
 }
 
+const std::string Clavis::clavis_get_route_bracket(const std::string& key) {
+    return this->routes[key];
+}
+
 void Clavis::clavis_run() {
     using namespace httplib;
 
@@ -56,6 +62,7 @@ extern "C" {
             .define_method("set_port", &Clavis::clavis_set_port, Rice::Arg("port"))
             .define_method("port", &Clavis::clavis_return_port)
             .define_method("set_route", &Clavis::clavis_set_route, (Rice::Arg("route"), Rice::Arg("response")))
+            .define_method("[]", &Clavis::clavis_get_route_bracket)
             .define_method("run", &Clavis::clavis_run);
     }
 }
