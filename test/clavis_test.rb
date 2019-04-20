@@ -19,4 +19,9 @@ class ClavisTest < Minitest::Test
     @clavis.set_port("3000")
     assert(@clavis.port == "3000")
   end
+
+  def test_set_route_and_response
+    refute_nil @clavis = Clavis.new
+    assert @clavis.set_route("/", "hoge")
+  end
 end
