@@ -30,4 +30,9 @@ class ClavisTest < Minitest::Test
     refute_nil @clavis = Clavis.new
     assert(@clavis["/"] == "Hello Clavis!\n Enjoy Your Ruby Web dev!")
   end
+
+  def test_set_default_port
+    refute_nil @clavis = Clavis.new
+    assert(@clavis.port == "3000")
+  end
 end
