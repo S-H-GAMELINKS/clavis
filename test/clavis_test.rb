@@ -25,4 +25,9 @@ class ClavisTest < Minitest::Test
     assert @clavis.set_route("/", "hoge")
     assert(@clavis["/"] == "hoge")
   end
+
+  def test_set_default_routes
+    refute_nil @clavis = Clavis.new
+    assert(@clavis["/"] == "Hello Clavis!\n Enjoy Your Ruby Web dev!")
+  end
 end
