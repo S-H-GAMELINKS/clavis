@@ -17,7 +17,7 @@ void Clavis::clavis_run() {
 
     Server svr;
 
-    svr.Get("/hi", [](const Request& req, Response& res) {
+    svr.Get("/", [](const Request& req, Response& res) {
         res.set_content("Hello World!", "text/plain");
     });
 
