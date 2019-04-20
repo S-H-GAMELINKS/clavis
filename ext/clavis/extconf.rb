@@ -1,3 +1,3 @@
 require "mkmf-rice"
 
-create__makefile("clavis/clavis")
+create_makefile("clavis/clavis")
