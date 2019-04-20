@@ -18,7 +18,9 @@ class Clavis {
         void clavis_run();
 };
 
-Clavis::Clavis() {}
+Clavis::Clavis() {
+    this->routes.emplace("/", "<h1>Hello Clavis!</h1><br><h2>Enjoy Your Ruby Web dev!</h2>");
+}
 
 void Clavis::clavis_set_port(const std::string& port) {
     this->port = port;
