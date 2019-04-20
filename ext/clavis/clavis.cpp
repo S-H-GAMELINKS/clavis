@@ -9,7 +9,7 @@ using namespace Rice;
 class Clavis {
         std::unordered_map<std::string, std::string> routes;
         std::string port;
-        const std::string default_response = "<h1>Hello Clavis!</h1><br><h2>Enjoy Your Ruby Web dev!</h2>";
+        const std::string default_response = "Hello Clavis!\n Enjoy Your Ruby Web dev!";
     public:
         Clavis();
         void clavis_set_port(const std::string& port);
