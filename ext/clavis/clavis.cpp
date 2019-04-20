@@ -3,7 +3,7 @@
 
 using namespace Rice;
 
-class Clavis: {
+class Clavis {
     public:
         Clavis();
 };
