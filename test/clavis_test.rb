@@ -9,4 +9,8 @@ class ClavisTest < Minitest::Test
   def test_init
     refute_nil Clavis.new
   end
+
+  def run_method_defined
+    assert Clavis.method_defined?("run")
+  end
 end
