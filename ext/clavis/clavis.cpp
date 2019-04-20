@@ -33,7 +33,7 @@ void Clavis::clavis_run() {
         res.set_content(numbers, "text/plain");
     });
 
-    svr.listen("localhost", 1234);
+    svr.listen("localhost", std::stoi(this->port));
 }
 
 extern "C" {
