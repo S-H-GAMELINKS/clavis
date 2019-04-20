@@ -1,5 +1,6 @@
 require "clavis/version"
+require "clavis/clavis"
 
-module Clavis
+class Clavis
   # Your code goes here...
 end
