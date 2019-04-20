@@ -15,7 +15,8 @@ class ClavisTest < Minitest::Test
   end
 
   def test_set_port
-    refute_nil @clavis = Clavis.new("3000")
-    assert @clavis.port == "3000"
+    refute_nil @clavis = Clavis.new
+    @clavis.set_port("3000")
+    assert(@clavis.port == "3000")
   end
 end
