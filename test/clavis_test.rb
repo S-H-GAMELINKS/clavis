@@ -22,7 +22,7 @@ class ClavisTest < Minitest::Test
 
   def test_set_route_and_response
     refute_nil @clavis = Clavis.new
-    assert @clavis.set_route("/", "hoge")
+    assert @clavis.set_route("/", "hoge", "text/plain")
     assert(@clavis["/"] == "hoge")
   end
 
@@ -34,5 +34,11 @@ class ClavisTest < Minitest::Test
   def test_set_default_port
     refute_nil @clavis = Clavis.new
     assert(@clavis.port == "3000")
+  end
+
+  def test_set_content_type
+    refute_nil @clavis = Clavis.new
+    assert @clavis.set_route("/", "<h1>Hoge</h1>", "text/html")
+    assert(@clavis["/"] == "<h1>Hoge</h1>")
   end
 end
